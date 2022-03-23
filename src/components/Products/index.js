@@ -3,6 +3,7 @@ import axios from 'axios'
 
 import * as S from './styles';
 import Product from '../Product';
+import Category from '../Category';
 
 function Products() {
     const [products, setProducts] = useState([]);
@@ -31,18 +32,19 @@ function Products() {
 
     const ShowProducts = () => {
         return (
-            <>
-                {products.map(product => <Product data={product} />)}
-            </>
+            <S.Wrapper>
+                <Category/>
+                <S.Container>
+                    {products.map(product => <Product data={product} key={product.id} />)}
+                </S.Container>
+            </S.Wrapper>
         )
     }
 
     return (
-      
-            <S.Container>
-                {loading ? <Loading /> : <ShowProducts />}
-            </S.Container>
-        
+        <>
+            {loading ? <Loading /> : <ShowProducts />}
+        </>
     );
 }
 

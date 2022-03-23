@@ -15,13 +15,15 @@ export const Title = styled.h1`
 `
 export const Links = styled.div`
     display: flex;
+    flex: 1;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    padding: 0px 10px;
 `
 export const Link = styled.a`
     text-decoration: none;
     margin-left: 10px;
-    font-size: 22px;
+    font-size: 20px;
     color: black;
     cursor: pointer;
 
