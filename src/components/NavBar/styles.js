@@ -21,7 +21,7 @@ export const Links = styled.div`
 export const Link = styled.a`
     text-decoration: none;
     margin-left: 10px;
-    font-size: 20px;
+    font-size: 22px;
     color: black;
     cursor: pointer;
 
