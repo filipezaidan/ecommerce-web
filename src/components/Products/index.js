@@ -1,9 +1,12 @@
+//Libraries
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
-
-import * as S from './styles';
+//Components
 import Product from '../Product';
+import Loading from '../Loading';
 import Category from '../Category';
+//Styles
+import * as S from './styles';
 
 function Products() {
     const [products, setProducts] = useState([]);
@@ -13,8 +16,7 @@ function Products() {
         setLoading(true);
         const products = await axios.get('https://fakestoreapi.com/products')
 
-        if (products) {
-            console.log(products.data)
+        if (products.data) {
             setProducts(products.data);
             setLoading(false);
         }
@@ -24,11 +26,6 @@ function Products() {
         getProducts();
     }, [])
 
-    const Loading = () => {
-        return (
-            <span>Carregando...</span>
-        )
-    }
 
     const ShowProducts = () => {
         return (

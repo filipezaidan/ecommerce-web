@@ -10,6 +10,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
+    cursor: pointer;
 `
 export const Image = styled.img`
     width: 250px;
