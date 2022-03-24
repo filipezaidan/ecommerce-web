@@ -10,7 +10,9 @@ import * as S from './styles';
 
 function Products() {
     const [products, setProducts] = useState([]);
+    const [filterProducts, setFilterProducts] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [category, setCategory] = useState("all")
 
     const getProducts = async () => {
         setLoading(true);
@@ -18,8 +20,22 @@ function Products() {
 
         if (products.data) {
             setProducts(products.data);
+            setFilterProducts(products.data);
             setLoading(false);
         }
+    }
+
+    const handleFilterProducts = (category) => {
+        if (category === 'all'){
+            setCategory(category)
+            setFilterProducts(products);
+            return ;
+        }
+        
+        let newProducts = products.filter(product => product.category === category);
+        setFilterProducts(newProducts);
+        setCategory(category);
+
     }
 
     useEffect(() => {
@@ -30,9 +46,12 @@ function Products() {
     const ShowProducts = () => {
         return (
             <S.Wrapper>
-                <Category/>
+                <Category
+                    categorySelected={category}
+                    handleFilterProducts={handleFilterProducts}
+                />
                 <S.Container>
-                    {products.map(product => <Product data={product} key={product.id} />)}
+                    {filterProducts.map(product => <Product data={product} key={product.id} />)}
                 </S.Container>
             </S.Wrapper>
         )
