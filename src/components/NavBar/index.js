@@ -1,10 +1,13 @@
+import { Link } from 'react-router-dom';
 import * as I from 'react-icons/fa'
 import *  as S from './styles'
 
 function NavBar() {
     return (
         <S.Container>
-            <S.Title>NOVA MODA</S.Title>
+            <Link to='/'>
+                <S.Title>ECOMMERCE WEB</S.Title>
+            </Link>
             <S.Links>
                 <S.Link to='/'>Home</S.Link>
                 <S.Link to='/products' >Products</S.Link>

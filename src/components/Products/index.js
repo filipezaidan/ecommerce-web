@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 //Components
 import Product from '../Product';
-import Loading from '../Loading';
+import CardProduct from '../../components/Loadings/CardProduct';
 import Category from '../Category';
 //Styles
 import * as S from './styles';
@@ -59,7 +59,7 @@ function Products() {
 
     return (
         <>
-            {loading ? <Loading /> : <ShowProducts />}
+            {loading ? <CardProduct /> : <ShowProducts />}
         </>
     );
 }

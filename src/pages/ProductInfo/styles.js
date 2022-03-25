@@ -4,17 +4,23 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     height: 100vh;
-    /* background-color:red; */
 `
-export const Image = styled.img`
-    padding: 5%;
-    width: 90%;
+export const ContainerImage = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     height: 100%;
     padding: 10%;
     object-fit: contain;
 `
+export const Image = styled.img`
+    width: 100%;
+    height:100%;
+    object-fit: contain;
+`
 export const Info = styled.div`
-    padding: 10% 0%;
+    padding: 10% 0;
     display: flex;
     height: 100vh;
     width: 100%;
@@ -33,6 +39,8 @@ export const Title = styled.span`
     font-size: 70px;
     font-weight: 100;
     color: black;
+    text-overflow: ellipsis; 
+    
 `
 export const Rating = styled.span`
     font-size: 26px;
@@ -52,6 +60,7 @@ export const Description = styled.span`
     font-size: 25px;
     font-weight: 100;
     color: black;
+    overflow: auto;
 `
 export const Buttons = styled.div`
     display: flex;

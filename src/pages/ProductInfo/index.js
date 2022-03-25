@@ -26,7 +26,9 @@ function ProductInfo() {
   const Product = () => {
     return (
       <S.Container>
-        <S.Image src={product.image} />
+        <S.ContainerImage>
+          <S.Image src={product.image} />
+        </S.ContainerImage>
 
         <S.Info>
           <S.Category>{product.category}</S.Category>

@@ -5,7 +5,7 @@ import * as S from './styles';
 function Category({  categorySelected, handleFilterProducts }) {
    return (
       <S.Container>
-         <S.Title>Last Products</S.Title>
+         <S.Title>Products</S.Title>
          <S.Line />
 
          <S.Categories>
