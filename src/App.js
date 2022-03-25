@@ -1,19 +1,24 @@
 //Libraries
+import { BrowserRouter,  Routes, Route } from 'react-router-dom';
+//Pages
+import ProductInfo from './pages/ProductInfo';
 //Components
 import Home from './components/Home/Home';
 import NavBar from './components/NavBar'
 import Products from './components/Products';
 //Styles
-import "./App.css"
-
+import "react-loading-skeleton/dist/skeleton.css";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <NavBar />
-      <Home />
-      <Products />
-    </>
+      <Routes>
+        <Route exact path="/" element={<Home/>}/>
+        <Route exact path="/products" element={<Products/>}/>
+        <Route exact path="/products/:id" element={<ProductInfo/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

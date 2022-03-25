@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link as LinkRouter } from 'react-router-dom';
 
 export const Container = styled.nav`
     display: flex;
@@ -20,7 +21,7 @@ export const Links = styled.div`
     justify-content: center;
     padding: 0px 10px;
 `
-export const Link = styled.a`
+export const Link = styled(LinkRouter)`
     text-decoration: none;
     margin-left: 10px;
     font-size: 20px;

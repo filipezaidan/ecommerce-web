@@ -1,7 +1,10 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom';
 
-export const Container = styled.div`
+export const Container = styled(Link)`
     display: flex;
+    text-decoration: none;
+    color: #000;
     height: 400px;
     width: 400px;
     margin: 20px;
