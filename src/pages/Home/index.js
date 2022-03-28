@@ -1,6 +1,6 @@
 
 import image from '../../assets/bg2.jpg'
-import Products from '../Products';
+import Products from '../../components/Products';
 import  *  as S from './styles'
 
 function Home() {

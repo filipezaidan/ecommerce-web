@@ -1,8 +1,10 @@
+//Libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+//Components
 import App from './App';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+//Styles
+import './index.css';
 import 'font-awesome/css/font-awesome.min.css';
 
 ReactDOM.render(

@@ -40,8 +40,8 @@ export const Categorie = styled.button`
     font-weight: 500;
     height: 40px;
     border: 1.2px solid #000;
-    background: #fff;
-    color: #000;
+    background: ${props => props.select === true ? '#000' : '#fff'};
+    color:  ${props => props.select === true ? '#fff' : '#000'};
     border-radius: 5px;
     transition: all 0.3s;
 
