@@ -1,5 +1,6 @@
 
 const handleCart = (state = [], action) => {
+
     const { type, payload } = action;
     const exist = state.find(item => item.id === payload.id);
 
@@ -19,8 +20,27 @@ const handleCart = (state = [], action) => {
                     }
                 ]
             };
+
         case "DEL_ITEM":
-            if (exist.quantity === 1 ) {
+            if (exist.quantity === 1) {
+                return state.filter((item) => item.id !== payload.id)
+            } else {
+                return state.map(item =>
+                    item.id === payload.id
+                        ? { ...item, quantity: item.quantity - 1 }
+                        : item
+                );
+            };
+
+        case "INCREMENT_ITEM":
+            return state.map(item =>
+                item.id === payload.id
+                    ? { ...item, quantity: item.quantity + 1 }
+                    : item
+            );
+
+        case "DECREMENT_ITEM":
+            if (exist.quantity === 1) {
                 return state.filter((item) => item.id !== payload.id)
             } else {
                 return state.map(item =>
@@ -34,3 +54,5 @@ const handleCart = (state = [], action) => {
 
     }
 }
+
+export default handleCart;

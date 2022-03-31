@@ -1,8 +1,16 @@
-import { Link } from 'react-router-dom';
+//Libraries
+import { Link, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+//Icons
 import * as I from 'react-icons/fa'
+//Styles
 import *  as S from './styles'
 
 function NavBar() {
+    
+    const state = useSelector(state => state.handleCart)
+    const navigate = useNavigate();
+    
     return (
         <S.Container>
             <Link to='/'>
@@ -23,9 +31,9 @@ function NavBar() {
                     <I.FaUserPlus color="black" />
                     Register
                 </S.Button>
-                <S.Button>
+                <S.Button onClick={() => navigate('/cart')}>
                     <I.FaSignOutAlt color="black" />
-                    Cart (0)
+                    Cart ({state.length})
                 </S.Button>
             </S.Buttons>
         </S.Container>

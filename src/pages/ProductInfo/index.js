@@ -1,17 +1,28 @@
 //Libraries
 import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 //Components
 import Loading from '../../components/Loadings/Product'
+// Actions
+import { addCart } from '../../redux/actions/index';
 //Services
 import api from '../../services/api';
 //Styles
 import * as S from './styles';
 
 function ProductInfo() {
+  const navigate = useNavigate()
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const handleAddProduct = (product) => {
+    dispatch(addCart(product));
+  }
 
   const handleGetProduct = async () => {
     setLoading(true);
@@ -38,8 +49,18 @@ function ProductInfo() {
           <S.Description>{product.description}</S.Description>
 
           <S.Buttons>
-            <S.Button theme={'light'}>Add to Cart</S.Button>
-            <S.Button theme={'dark'}>Go to Cart</S.Button>
+            <S.Button
+              theme={'light'}
+              onClick={() => handleAddProduct(product)}
+            >
+              Add to Cart
+            </S.Button>
+            <S.Button
+              onClick={() => navigate('/cart')}
+              theme={'dark'}
+            >
+              Go to Cart
+            </S.Button>
           </S.Buttons>
         </S.Info>
 

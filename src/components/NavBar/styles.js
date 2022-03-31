@@ -7,7 +7,7 @@ export const Container = styled.nav`
     justify-content: space-between;
     height: 70px;
     background-color: #f8f9fa;
-    padding: 0px 10px;
+    padding: 0% 3%;
 `
 export const Title = styled.h1`
     font-size: 26px;
@@ -49,7 +49,6 @@ export const Button = styled.div`
     border-radius: 5px;
     cursor: pointer;
     transform: 0.3s;
-
     &:hover{
       background: rgb(0 0 0 / 20%);;
     }
