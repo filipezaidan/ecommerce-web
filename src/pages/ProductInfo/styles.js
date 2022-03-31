@@ -89,7 +89,8 @@ export const Button = styled.button`
     transition: all 0.3s;
 
     &:hover{
-        
+        background:${props => props.theme === 'light' ? '#000' : '#fff'} ;
+        color:${props => props.theme === 'light' ? '#fff' : '#000'} ;
     }
 
 `

@@ -5,8 +5,8 @@ export const Table = styled.table`
     border-collapse: collapse;
     
     width: 70%;
-    table-layout: fixed;
-    overflow: hidden;
+    table-layout: auto;
+
     border-radius: 5px;
 
 `
@@ -17,12 +17,13 @@ export const THead = styled.thead`
 `;
 export const TR = styled.tr`
     background-color: #f8f8f8;
-    border: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     padding: .35em;
 `;
 export const TD = styled.td`
     padding: .62em;
     text-align: center;
+    font-size:16px;
 `;
 export const TH = styled.th`
     padding: .62em;
@@ -32,3 +33,33 @@ export const TH = styled.th`
     text-transform: uppercase;
 `;
 export const TBody = styled.tbody``;
+
+
+export const ContainerProductItem = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+`
+
+export const ImageProduct = styled.img`
+    width: 100px; 
+    height: 100px;
+    object-fit: contain;
+`
+
+export const TitleProduct = styled.span`
+
+`
+
+export const ContainerQuantity = styled.div`
+    display: flex ;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: red; */
+`
+
+export const ButtonCart = styled.button`
+    cursor: pointer
+
+`

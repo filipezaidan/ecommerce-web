@@ -1,8 +1,9 @@
 //Libraries
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 //Components
 import Loading from '../../components/Loadings/Product'
 // Actions
@@ -22,6 +23,7 @@ function ProductInfo() {
 
   const handleAddProduct = (product) => {
     dispatch(addCart(product));
+    toast.success('Product added with success!')
   }
 
   const handleGetProduct = async () => {

@@ -1,6 +1,8 @@
+//Libraries
 import { useDispatch } from 'react-redux';
 import { incrementItemCart, decrementItemCart } from '../../redux/actions/index';
 import * as I from 'react-icons/fa';
+//Styles
 import * as S from './styles';
 
 function TableProducts({ products }) {
@@ -14,7 +16,6 @@ function TableProducts({ products }) {
         dispatch(decrementItemCart(product))
     }
 
-
     return (
         <S.Table>
             <S.THead>
@@ -23,32 +24,33 @@ function TableProducts({ products }) {
                     <S.TH>Price</S.TH>
                     <S.TH>Quantity</S.TH>
                     <S.TH>Total</S.TH>
-                    {/* <S.TH>#</S.TH> */}
                 </S.TR>
             </S.THead>
             <S.TBody>
                 {products.map((item) => {
-                    console.log(item)
                     return (
                         <S.TR key={item.id}>
                             <S.TD>
-                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', width: '100%' }}>
-                                    <img style={{ objectFit: 'contain' }} src={item.image} width={100} height={100} />
-                                    <span>{item.title}</span>
-                                </div>
+                                <S.ContainerProductItem>
+                                    <S.ImageProduct src={item.image} />
+                                    <S.TitleProduct>{item.title}</S.TitleProduct>
+                                </S.ContainerProductItem>
                             </S.TD>
                             <S.TD>
-                                ${item.price}
+                                $ {item.price}
                             </S.TD>
                             <S.TD>
-                                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                                    <I.FaPlus onClick={() => handleIncrementItem(item)}>add</I.FaPlus>
+                                <S.ContainerQuantity>
+                                    <S.ButtonCart onClick={() => handleIncrementItem(item)}>
+                                        <I.FaPlus />
+                                    </S.ButtonCart>
                                     {item.quantity}
-                                    <I.FaMinus onClick={() => handleDecrementItem(item)}>rem</I.FaMinus>
-                                </div>
+                                    <S.ButtonCart onClick={() => handleDecrementItem(item)}>
+                                        <I.FaMinus />
+                                    </S.ButtonCart>
+                                </S.ContainerQuantity>
                             </S.TD>
-                            <S.TD>${item.quantity * item.price}</S.TD>
-
+                            <S.TD>$ {(item.quantity * item.price).toFixed(2)}</S.TD>
                         </S.TR>
                     );
                 })}
