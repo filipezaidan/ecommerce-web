@@ -43,6 +43,7 @@ export const Buttons = styled.div`
 
 export const Button = styled.div`
     display: flex;
+    gap: 5px;
     align-items: center;
     justify-content: space-between;
     margin-left: 20px;
