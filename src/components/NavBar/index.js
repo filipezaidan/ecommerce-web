@@ -7,10 +7,10 @@ import * as I from 'react-icons/fa'
 import *  as S from './styles'
 
 function NavBar() {
-    
+
     const state = useSelector(state => state.handleCart)
     const navigate = useNavigate();
-    
+
     return (
         <S.Container>
             <Link to='/'>
@@ -24,15 +24,15 @@ function NavBar() {
             </S.Links>
             <S.Buttons>
                 <S.Button>
-                    <I.FaSignOutAlt color="black" />
+                    <I.FaSignOutAlt />
                     Entrar
                 </S.Button>
                 <S.Button>
-                    <I.FaUserPlus color="black" />
+                    <I.FaUserPlus />
                     Register
                 </S.Button>
                 <S.Button onClick={() => navigate('/cart')}>
-                    <I.FaSignOutAlt color="black" />
+                    <I.FaSignOutAlt />
                     Cart ({state.length})
                 </S.Button>
             </S.Buttons>

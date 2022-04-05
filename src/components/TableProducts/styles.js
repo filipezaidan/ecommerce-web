@@ -1,12 +1,9 @@
 import styled from 'styled-components'
 
 export const Table = styled.table`
-
     border-collapse: collapse;
-    
     width: 70%;
     table-layout: auto;
-
     border-radius: 5px;
 
 `
@@ -33,33 +30,27 @@ export const TH = styled.th`
     text-transform: uppercase;
 `;
 export const TBody = styled.tbody``;
-
-
 export const ContainerProductItem = styled.div`
     display: flex;
+    gap: 10px;
     align-items: center;
     justify-content: flex-start;
 
 `
-
 export const ImageProduct = styled.img`
     width: 100px; 
     height: 100px;
     object-fit: contain;
 `
-
 export const TitleProduct = styled.span`
 
 `
-
 export const ContainerQuantity = styled.div`
     display: flex ;
     align-items: center;
     justify-content: space-around;
-    /* background-color: red; */
 `
-
 export const ButtonCart = styled.button`
+    background: transparent;
     cursor: pointer
-
 `

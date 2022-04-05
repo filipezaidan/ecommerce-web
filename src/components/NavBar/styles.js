@@ -17,19 +17,21 @@ export const Title = styled.h1`
 export const Links = styled.div`
     display: flex;
     flex: 1;
+    gap: 10px;
     align-items: center;
     justify-content: center;
     padding: 0px 10px;
 `
 export const Link = styled(LinkRouter)`
     text-decoration: none;
-    margin-left: 10px;
     font-size: 20px;
     color: black;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
 
     &:hover{
-      color: blue
+        font-size: 22px;
+
     }
 
 `
@@ -49,8 +51,10 @@ export const Button = styled.div`
     border-radius: 5px;
     cursor: pointer;
     transform: 0.3s;
+
     &:hover{
-      background: rgb(0 0 0 / 20%);;
+      background: #000;
+      color: #fff
     }
 
 `
